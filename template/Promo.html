@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/Promo.css">
+        <link rel="stylesheet" href="/assets/css/header.css">
+    </head>
+    <body>
+        <header>
+            <a href="/promo" class="lien">Promo</a>
+            <a href="/change" class="lien">Change</a>
+            <a href="/user/form" class="lien">Formulaire</a>
+            <a href="/user/treatment" class="lien">Form Traitement</a>
+            <a href="/user/Display" class="lien">Form Display</a>
+        </header>
+        <main>
+            <div class="InfoClass">
+                <h1>{{.NameClasse}}</h1>
+                <div class="Info">
+                    <p>Filière : {{.Filiere}}</p>
+                    <p>Niveau Etude : {{.Niveau}}</p>
+                    <p>Nombre d'étudiant : {{.NbEtudiant}}</p>
+                </div>
+            </div>
+            <div class="Tableau">
+                <div class="Nom">
+                    <p class="Colonne_LastName" id="ligne_1LastName">Nom</p>
+                    {{range .Etudiant}}
+                        <p class="Colonne_LastName">{{.LastName}}</p>
+                    {{end}}
+                </div>
+
+                <div class="Prenom">
+                    <p class="Colonne_FirstName" id="ligne_1FirstName">Prénom</p>
+                    {{range .Etudiant}}
+                        <p class="Colonne_FirstName">{{.FirstName}}</p>
+                    {{end}}
+                </div>
+                <div class="Age">
+                    <p class="Colonne_Age" id="ligne_1Age">Age</p>
+                    {{range .Etudiant}}
+                        <p class="Colonne_Age">{{.Age}}</p>
+                    {{end}}
+                </div>
+                <div class="Sexe">
+                    <p class="Colonne_Sexe" id="ligne_1Sexe">Sexe</p>
+                    {{range .Etudiant}}
+                        <p class="Colonne_Sexe">{{.Sexe}}</p>
+                    {{end}}
+                </div>
+            </div>
+
+        </main>
+        <script src="" async defer></script>
+    </body>
+</html>

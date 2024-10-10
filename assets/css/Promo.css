@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(234, 230, 225);
+}
+
+main {
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    background-color: aliceblue;
+}
+
+.InfoClass {
+    background-color: aqua;
+    width: 100%;
+}
+
+.InfoClass > h1 {
+    font-size: 3em;
+    color: white;
+}
+
+.Info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 1.4em;
+    gap: 10px;
+    color: white;
+}
+
+.Tableau {
+    gap: 70px;
+    border: solid black 2px;
+    width: 50%;
+}
+
+.Nom {
+    border: solid black 1px;
+    padding: 5px;
+}
+
+#ligne_1LastName {
+    background-color: antiquewhite;
+    width: 100%;
+    text-align: center
+}

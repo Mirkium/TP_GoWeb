@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    top: 0;
+}
+
+.lien {
+    text-decoration: none;
+    color: white;
+    font-size: 1.6em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.lien:hover {
+    color: aqua;
+}
