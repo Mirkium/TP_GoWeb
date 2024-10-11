@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    position: absolute;
+    top: 10%;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+iframe {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}

@@ -14,45 +14,35 @@
             <a href="/promo" class="lien">Promo</a>
             <a href="/change" class="lien">Change</a>
             <a href="/user/form" class="lien">Formulaire</a>
-            <a href="/user/treatment" class="lien">Form Traitement</a>
             <a href="/user/Display" class="lien">Form Display</a>
         </header>
         <main>
             <div class="InfoClass">
-                <h1>{{.NameClasse}}</h1>
-                <div class="Info">
-                    <p>Filière : {{.Filiere}}</p>
+                <div class="TopInfo">
+                    <h1>{{.NameClasse}}</h1>
                     <p>Niveau Etude : {{.Niveau}}</p>
+                </div>
+                <div class="BotInfo">
+                    <p>Filière : {{.Filiere}}</p>
                     <p>Nombre d'étudiant : {{.NbEtudiant}}</p>
                 </div>
             </div>
-            <div class="Tableau">
-                <div class="Nom">
-                    <p class="Colonne_LastName" id="ligne_1LastName">Nom</p>
-                    {{range .Etudiant}}
-                        <p class="Colonne_LastName">{{.LastName}}</p>
-                    {{end}}
-                </div>
-
-                <div class="Prenom">
-                    <p class="Colonne_FirstName" id="ligne_1FirstName">Prénom</p>
-                    {{range .Etudiant}}
-                        <p class="Colonne_FirstName">{{.FirstName}}</p>
-                    {{end}}
-                </div>
-                <div class="Age">
-                    <p class="Colonne_Age" id="ligne_1Age">Age</p>
-                    {{range .Etudiant}}
-                        <p class="Colonne_Age">{{.Age}}</p>
-                    {{end}}
-                </div>
-                <div class="Sexe">
-                    <p class="Colonne_Sexe" id="ligne_1Sexe">Sexe</p>
-                    {{range .Etudiant}}
-                        <p class="Colonne_Sexe">{{.Sexe}}</p>
-                    {{end}}
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <th class="First">Nom</th>
+                    <th class="First">Prénom</th>
+                    <th class="First">Age</th>
+                    <th class="First">Sexe</th>
+                </tr>
+                {{range .Etudiant}}
+                    <tr>
+                        <td>{{.LastName}}</td>
+                        <td>{{.FirstName}}</td>
+                        <td>{{.Age}}</td>
+                        <td>{{.Sexe}}</td>
+                    </tr>
+                {{end}}
+            </table>
 
         </main>
         <script src="" async defer></script>

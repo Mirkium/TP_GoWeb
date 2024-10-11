@@ -1,5 +1,8 @@
 body {
     background-color: rgb(234, 230, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -14,33 +17,35 @@ main {
     width: 100%;
 }
 
-.InfoClass > h1 {
-    font-size: 3em;
-    color: white;
-}
-
-.Info {
+.TopInfo {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TopInfo > h1 {
+    font-size: 3em;
+    color: rgb(0, 0, 0);
+}
+
+.BotInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1.4em;
-    gap: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
-.Tableau {
-    gap: 70px;
-    border: solid black 2px;
-    width: 50%;
-}
-
-.Nom {
-    border: solid black 1px;
-    padding: 5px;
-}
-
-#ligne_1LastName {
-    background-color: antiquewhite;
+table{
     width: 100%;
-    text-align: center
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.First {
+    background-color: antiquewhite;
 }
