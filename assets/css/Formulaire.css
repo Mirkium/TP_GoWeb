@@ -1,15 +1,21 @@
 body {
     background-color: antiquewhite;
-}
-
-main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+main {
+    position: absolute;
+    top: 10%;
+}
+
 form {
+    padding: 5px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

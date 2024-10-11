@@ -1,0 +1,21 @@
+body {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    position: absolute;
+    top: 10%;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+main > div {
+    display: flex;
+    flex-direction: row;
+    
+}

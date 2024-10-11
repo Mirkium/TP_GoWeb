@@ -33,7 +33,7 @@ type Change struct {
 }
 
 var stockageFormNom = StockageForm{false, ""}
-var stockageFormPrenom = StockageForm{false,""}
+var stockageFormPrenom = StockageForm{false, ""}
 var stockageFormDate = StockageForm{false, ""}
 var stockageFormSexe = StockageForm{false, ""}
 
@@ -102,7 +102,7 @@ func main() {
 			return
 		}
 
-		checkValueNom, _ := regexp.MatchString("[a-zA-Z-]{1,64}$", r.FormValue("nom")) 
+		checkValueNom, _ := regexp.MatchString("[a-zA-Z-]{1,64}$", r.FormValue("nom"))
 		checkValuePrenom, _ := regexp.MatchString("[a-zA-Z-]{1,64}$", r.FormValue("prenom"))
 		if !checkValueNom {
 			stockageFormNom = StockageForm{false, ""}
@@ -117,12 +117,28 @@ func main() {
 
 		stockageFormNom = StockageForm{true, r.FormValue("nom")}
 		stockageFormPrenom = StockageForm{true, r.FormValue("prenom")}
-		stockageFormDate = StockageForm{true, r.FormValue("date")}
+		stockageFormDate = StockageForm{true, r.FormValue("dateNaissance")}
 		stockageFormSexe = StockageForm{true, r.FormValue("sexe")}
 
-		http.Redirect(w, r, "/form/display", http.StatusSeeOther)
+		http.Redirect(w, r, "/user/display", http.StatusSeeOther)
 	})
-	
+
+	type Envoie struct {
+		Nom    string
+		Prenom string
+		Age    string
+		Sexe   string
+	}
+
+	http.HandleFunc("/user/display", func(w http.ResponseWriter, r *http.Request) {
+		temp, err := template.ParseFiles("./template/FormDisplay.html")
+		if err != nil {
+			fmt.Print("Toi tu as fais une connerie du type : %s", err.Error())
+			return
+		}
+		Data := Envoie{stockageFormNom.Value, stockageFormPrenom.Value, stockageFormDate.Value, stockageFormSexe.Value}
+		temp.Execute(w, Data)
+	})
 
 	fileServer := http.FileServer(http.Dir("./assets/"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
